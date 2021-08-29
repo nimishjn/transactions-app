@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Transactions App",
+  "name": "A place to store all your debits and credits",
   "icons": [
     {
       "src": "favicon.ico",
