@@ -1,4 +1,6 @@
 :root {
     --primary: rgb(0, 60, 255);
     --secondary: rgb(0, 102, 255);
+    --get-color: #b71c1c;
+    --give-color: #33691e;
 }

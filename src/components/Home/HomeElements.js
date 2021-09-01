@@ -59,3 +59,42 @@ export const ViewReport = styled.div`
   color: var(--primary);
   cursor: pointer;
 `;
+
+export const CTable = styled.table`
+  width: 100%;
+  padding: 0.5rem;
+`;
+
+export const CTableRow = styled.tr`
+  width: 100%;
+  padding: 1rem 0;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  .customer-profile {
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: blue;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  .customer-name {
+  }
+
+  .customer-amount-wrap {
+    text-align: end;
+  }
+`;
