@@ -1,48 +1,28 @@
 import React from "react";
-import { CTable, CTableRow } from "./HomeElements";
+import { CTable, TableTop } from "./HomeElements";
+import { FiSearch } from "react-icons/fi";
+import { VscFilter, VscFilePdf } from "react-icons/vsc";
+import CustomerRow from "./CustomerRow";
 
 const CustomerTable = () => {
   return (
     <>
       <CTable>
-        <CTableRow>
-          <td width="2.5rem">
-            <span className="customer-profile">NJ</span>
-          </td>
-          <td className="customer-name">
-            <h2>Nimish Jain</h2>
-            <p>4 weeks ago</p>
-          </td>
-          <td className="customer-amount-wrap">
-            <h2
-              style={{
-                color: "var(--get-color)",
-              }}
-            >
-              ₹ 10,00,000
-            </h2>
-            <p>You will get</p>
-          </td>
-        </CTableRow>
-        <CTableRow>
-          <td width="2.5rem">
-            <span className="customer-profile">NJ</span>
-          </td>
-          <td className="customer-name">
-            <h2>Nimish Jain</h2>
-            <p>4 weeks ago</p>
-          </td>
-          <td className="customer-amount-wrap">
-            <h2
-              style={{
-                color: "var(--get-color)",
-              }}
-            >
-              ₹ 10,00,000
-            </h2>
-            <p>You will get</p>
-          </td>
-        </CTableRow>
+        <TableTop>
+          <div className="customer-filter-box">
+            <FiSearch className="search-button" />
+            <input className="customer-search" type="text" />
+          </div>
+          <div className="customer-filter">
+            <VscFilter />
+          </div>
+          <div className="customer-pdf">
+            <VscFilePdf />
+          </div>
+        </TableTop>
+        {[1, 2, 3].map((e) => (
+          <CustomerRow e={e} />
+        ))}
       </CTable>
     </>
   );

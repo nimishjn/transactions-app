@@ -60,14 +60,60 @@ export const ViewReport = styled.div`
   cursor: pointer;
 `;
 
-export const CTable = styled.table`
+export const CTable = styled.div`
   width: 100%;
-  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-export const CTableRow = styled.tr`
+export const TableTop = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
+
+  .customer-filter-box {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .search-button {
+    font-size: 1.5rem;
+    color: gray;
+  }
+
+  .customer-search {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  .customer-filter,
+  .customer-pdf {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+`;
+
+export const CTableRow = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid var(--gray);
+  padding: 0.7rem;
 
   h2 {
     font-size: 1rem;
@@ -88,13 +134,20 @@ export const CTableRow = styled.tr`
     color: white;
     background-color: blue;
     border-radius: 50%;
-    margin-right: 1rem;
   }
 
   .customer-name {
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 1rem;
   }
 
   .customer-amount-wrap {
+    width: fit-content;
+    justify-self: flex-end;
     text-align: end;
+    min-width: fit-content;
   }
 `;
