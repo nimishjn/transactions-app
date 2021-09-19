@@ -8,6 +8,7 @@ import {
 } from "./HomeElements";
 import { AiFillCaretRight } from "react-icons/ai";
 import CustomerTable from "./CustomerTable";
+import AddCustomer from "./AddCustomer";
 
 const Home = () => {
   return (
@@ -40,6 +41,7 @@ const Home = () => {
         </GiveGetCard>
         <CustomerTable />
       </HomeContainer>
+      <AddCustomer />
     </>
   );
 };

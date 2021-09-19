@@ -66,6 +66,7 @@ export const CTable = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 export const TableTop = styled.div`
@@ -91,6 +92,13 @@ export const TableTop = styled.div`
     color: gray;
   }
 
+  .search-close-button {
+    font-size: 1.5rem;
+    color: gray;
+    font-weight: 100;
+    cursor: pointer;
+  }
+
   .customer-search {
     width: 100%;
     border: none;
@@ -103,6 +111,7 @@ export const TableTop = styled.div`
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--primary);
+    line-height: 0%;
   }
 `;
 
@@ -149,5 +158,28 @@ export const CTableRow = styled.div`
     justify-self: flex-end;
     text-align: end;
     min-width: fit-content;
+  }
+`;
+
+export const AddCustomerButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #a63651;
+  color: white;
+  font-size: 1.2rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 `;
