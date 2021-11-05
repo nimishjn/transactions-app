@@ -9,7 +9,7 @@ import {
 import { AiFillCaretRight } from "react-icons/ai";
 import CustomerTable from "./CustomerTable";
 import AddCustomer from "./AddCustomer";
-import { customerSampleData } from "./SampleData";
+import { customerSampleData } from "../../assets/SampleData";
 import { amountFormatter } from "../../util/amountFormatter";
 
 const Home = () => {

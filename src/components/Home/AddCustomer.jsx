@@ -25,6 +25,9 @@ const AddCustomer = ({ customerData, setCustomerData }) => {
     if (customerName === "") {
       setFormError(true);
       return;
+    } else if (customerData.some((e) => e.name === customerName)) {
+      setFormError(true);
+      return;
     }
 
     let tempCustomerData = [...customerData];

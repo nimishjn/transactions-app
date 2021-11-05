@@ -9,8 +9,10 @@ const CustomerRow = ({ e }) => {
       <div width="2.5rem">
         <span className="customer-profile">
           {/* Initials generator */}
-          {e.name.split(" ")[0][0] +
-            (e.name.split(" ")[1] ? e.name.split(" ")[1][0] : "")}
+          {(
+            e.name.split(" ")[0][0] +
+            (e.name.split(" ")[1] ? e.name.split(" ")[1][0] : "")
+          ).toUpperCase()}
         </span>
       </div>
       <div className="customer-name">
