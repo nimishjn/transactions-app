@@ -10,7 +10,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 // import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
-const AddCustomer = () => {
+const AddCustomer = ({ customerData, setCustomerData }) => {
   const [dialogueOpen, setDialogueOpen] = useState(false);
   const [customerName, setCustomerName] = useState("");
   const [formError, setFormError] = useState(false);
@@ -26,6 +26,18 @@ const AddCustomer = () => {
       setFormError(true);
       return;
     }
+
+    let tempCustomerData = [...customerData];
+
+    tempCustomerData.unshift({
+      name: customerName,
+      lastTransactionDate: new Date(),
+      amount: 0,
+      phoneNumber: customerPhone,
+    });
+
+    setCustomerData(tempCustomerData);
+
     setDialogueOpen(false);
     setCustomerName("");
     setCustomerPhone("");
@@ -52,7 +64,6 @@ const AddCustomer = () => {
         <DialogTitle>Add new customer</DialogTitle>
         <DialogContent>
           <TextField
-            autoComplete
             autoFocus
             margin="dense"
             id="customer-name"
@@ -63,7 +74,6 @@ const AddCustomer = () => {
             variant="outlined"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
-            onKeyPress
           />
           {/* <FormControl>
             <InputLabel id="demo-simple-select-label">Code</InputLabel>
@@ -96,7 +106,6 @@ const AddCustomer = () => {
             </Select>
           </FormControl> */}
           <TextField
-            autoComplete
             margin="dense"
             id="customer-phone"
             label="Phone Number"
@@ -105,7 +114,6 @@ const AddCustomer = () => {
             variant="outlined"
             value={customerPhone}
             onChange={(e) => setCustomerPhone(e.target.value)}
-            onKeyPress
           />
           <Button
             variant="text"

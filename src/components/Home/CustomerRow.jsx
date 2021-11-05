@@ -3,14 +3,14 @@ import { CTableRow } from "./HomeElements";
 import { amountFormatter } from "../../util/amountFormatter";
 import TimeAgo from "timeago-react";
 
-const CustomerRow = ({ e, key }) => {
+const CustomerRow = ({ e }) => {
   return (
-    <CTableRow id={key} key={key}>
+    <CTableRow>
       <div width="2.5rem">
         <span className="customer-profile">
           {/* Initials generator */}
           {e.name.split(" ")[0][0] +
-            (e.name.split(" ")[1] && e.name.split(" ")[1][0])}
+            (e.name.split(" ")[1] ? e.name.split(" ")[1][0] : "")}
         </span>
       </div>
       <div className="customer-name">

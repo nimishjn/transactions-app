@@ -8,6 +8,15 @@ import FilterDialog from "./FilterDialog";
 const CustomerTable = ({ customerData }) => {
   const [inputActive, setInputActive] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+  const [filterDialogOpen, setFilterDialogOpen] = React.useState(false);
+  const [filterValue, setFilterValue] = useState("All");
+  const [sortValue, setSortValue] = useState("Most Recent");
+
+  const customerFilter = (name) => {
+    if (name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1)
+      return true;
+  };
+
   return (
     <>
       <CTable>
@@ -38,17 +47,26 @@ const CustomerTable = ({ customerData }) => {
             />
           </div>
           <div className="customer-filter">
-            <VscFilter />
+            <VscFilter onClick={() => setFilterDialogOpen(true)} />
           </div>
           <div className="customer-pdf">
             <VscFilePdf />
           </div>
         </TableTop>
-        {customerData.map((e, i) => (
-          <CustomerRow e={e} key={`customer${i}`} />
-        ))}
+        {customerData
+          .filter((e) => customerFilter(e.name))
+          .map((e) => (
+            <CustomerRow e={e} />
+          ))}
       </CTable>
-      <FilterDialog />
+      <FilterDialog
+        filterDialogOpen={filterDialogOpen}
+        setFilterDialogOpen={setFilterDialogOpen}
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+        sortValue={sortValue}
+        setSortValue={setSortValue}
+      />
     </>
   );
 };

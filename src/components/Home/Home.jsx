@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import {
   GiveGetCard,
@@ -9,30 +9,32 @@ import {
 import { AiFillCaretRight } from "react-icons/ai";
 import CustomerTable from "./CustomerTable";
 import AddCustomer from "./AddCustomer";
-import { customerData } from "./SampleData";
+import { customerSampleData } from "./SampleData";
 import { amountFormatter } from "../../util/amountFormatter";
 
-const calculateTotalGetAmount = () => {
-  let amt = 0;
-  for (let i = 0; i < customerData.length; i++) {
-    if (customerData[i].amount > 0) {
-      amt += customerData[i].amount;
-    }
-  }
-  return amountFormatter(amt);
-};
-
-const calculateTotalGiveAmount = () => {
-  let amt = 0;
-  for (let i = 0; i < customerData.length; i++) {
-    if (customerData[i].amount < 0) {
-      amt += customerData[i].amount;
-    }
-  }
-  return amountFormatter(Math.abs(amt));
-};
-
 const Home = () => {
+  const [customerData, setCustomerData] = useState(customerSampleData);
+
+  const calculateTotalGetAmount = () => {
+    let amt = 0;
+    for (let i = 0; i < customerData.length; i++) {
+      if (customerData[i].amount > 0) {
+        amt += customerData[i].amount;
+      }
+    }
+    return amountFormatter(amt);
+  };
+
+  const calculateTotalGiveAmount = () => {
+    let amt = 0;
+    for (let i = 0; i < customerData.length; i++) {
+      if (customerData[i].amount < 0) {
+        amt += customerData[i].amount;
+      }
+    }
+    return amountFormatter(Math.abs(amt));
+  };
+
   return (
     <>
       <HomeContainer>
@@ -63,7 +65,10 @@ const Home = () => {
         </GiveGetCard>
         <CustomerTable customerData={customerData} />
       </HomeContainer>
-      <AddCustomer />
+      <AddCustomer
+        customerData={customerData}
+        setCustomerData={setCustomerData}
+      />
     </>
   );
 };
