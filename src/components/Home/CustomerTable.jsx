@@ -5,6 +5,7 @@ import { VscChromeClose, VscFilePdf } from "react-icons/vsc";
 import CustomerRow from "./CustomerRow";
 import FilterDialog from "./FilterDialog";
 import { FcEmptyFilter, FcFilledFilter } from "react-icons/fc";
+// import { jsPDF } from "jspdf";
 
 const CustomerTable = ({ customerData }) => {
   const [inputActive, setInputActive] = useState(false);
@@ -62,9 +63,17 @@ const CustomerTable = ({ customerData }) => {
     }
   };
 
+  const exportPdf = () => {
+    // const input = document.getElementById("customer-table");
+    // const pdf = new jsPDF({ format: "a4" });
+    // pdf.html(input).then(() => {
+    //   pdf.save("test.pdf");
+    // });
+  };
+
   return (
     <>
-      <CTable>
+      <CTable id="customer-table">
         <TableTop>
           <div className="customer-filter-box">
             {inputActive ? (
@@ -101,7 +110,7 @@ const CustomerTable = ({ customerData }) => {
             )}
           </div>
           <div className="customer-pdf">
-            <VscFilePdf />
+            <VscFilePdf onClick={exportPdf} />
           </div>
         </TableTop>
         {customerData

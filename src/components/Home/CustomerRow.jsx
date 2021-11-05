@@ -23,12 +23,17 @@ const CustomerRow = ({ e }) => {
       <div className="customer-amount-wrap">
         <h2
           style={{
-            color: e.amount >= 0 ? "var(--get-color)" : "var(--give-color)",
+            color:
+              e.amount === 0
+                ? "black"
+                : e.amount > 0
+                ? "var(--get-color)"
+                : "var(--give-color)",
           }}
         >
           ₹ {amountFormatter(Math.abs(e.amount))}
         </h2>
-        <p>You will {e.amount >= 0 ? "get" : "give"}</p>
+        {e.amount !== 0 && <p>You will {e.amount >= 0 ? "get" : "give"}</p>}
       </div>
     </CTableRow>
   );
