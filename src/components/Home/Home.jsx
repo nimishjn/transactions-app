@@ -9,6 +9,28 @@ import {
 import { AiFillCaretRight } from "react-icons/ai";
 import CustomerTable from "./CustomerTable";
 import AddCustomer from "./AddCustomer";
+import { customerData } from "./SampleData";
+import { amountFormatter } from "../../util/amountFormatter";
+
+const calculateTotalGetAmount = () => {
+  let amt = 0;
+  for (let i = 0; i < customerData.length; i++) {
+    if (customerData[i].amount > 0) {
+      amt += customerData[i].amount;
+    }
+  }
+  return amountFormatter(amt);
+};
+
+const calculateTotalGiveAmount = () => {
+  let amt = 0;
+  for (let i = 0; i < customerData.length; i++) {
+    if (customerData[i].amount < 0) {
+      amt += customerData[i].amount;
+    }
+  }
+  return amountFormatter(Math.abs(amt));
+};
 
 const Home = () => {
   return (
@@ -21,7 +43,7 @@ const Home = () => {
                 color: "var(--give-color)",
               }}
             >
-              ₹ 10,000
+              ₹ {calculateTotalGiveAmount()}
             </h1>
             <p>You will give</p>
           </TotalCard>
@@ -31,7 +53,7 @@ const Home = () => {
                 color: "var(--get-color)",
               }}
             >
-              ₹ 10,000
+              ₹ {calculateTotalGetAmount()}
             </h1>
             <p>You will get</p>
           </TotalCard>
@@ -39,7 +61,7 @@ const Home = () => {
             View Report <AiFillCaretRight />
           </ViewReport>
         </GiveGetCard>
-        <CustomerTable />
+        <CustomerTable customerData={customerData} />
       </HomeContainer>
       <AddCustomer />
     </>

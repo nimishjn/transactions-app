@@ -3,8 +3,9 @@ import { CTable, TableTop } from "./HomeElements";
 import { FiSearch } from "react-icons/fi";
 import { VscChromeClose, VscFilter, VscFilePdf } from "react-icons/vsc";
 import CustomerRow from "./CustomerRow";
+import FilterDialog from "./FilterDialog";
 
-const CustomerTable = () => {
+const CustomerTable = ({ customerData }) => {
   const [inputActive, setInputActive] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   return (
@@ -43,10 +44,11 @@ const CustomerTable = () => {
             <VscFilePdf />
           </div>
         </TableTop>
-        {[1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3].map((e) => (
-          <CustomerRow e={e} />
+        {customerData.map((e, i) => (
+          <CustomerRow e={e} key={`customer${i}`} />
         ))}
       </CTable>
+      <FilterDialog />
     </>
   );
 };

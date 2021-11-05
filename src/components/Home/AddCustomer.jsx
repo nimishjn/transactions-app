@@ -8,11 +8,14 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+// import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const AddCustomer = () => {
   const [dialogueOpen, setDialogueOpen] = useState(false);
   const [customerName, setCustomerName] = useState("");
   const [formError, setFormError] = useState(false);
+  // const [formCountryCode, setFormCountryCode] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
 
   const handleClickOpen = () => {
     setDialogueOpen(true);
@@ -25,12 +28,18 @@ const AddCustomer = () => {
     }
     setDialogueOpen(false);
     setCustomerName("");
+    setCustomerPhone("");
     setFormError(false);
   };
 
   return (
     <>
-      <AddCustomerButton onClick={handleClickOpen}>
+      <AddCustomerButton
+        style={{
+          display: dialogueOpen && "none",
+        }}
+        onClick={handleClickOpen}
+      >
         <FaUserPlus />
         <span>ADD CUSTOMER</span>
       </AddCustomerButton>
@@ -47,15 +56,67 @@ const AddCustomer = () => {
             autoFocus
             margin="dense"
             id="customer-name"
-            label="Customer name"
+            label="Customer Name *"
             type="text"
             fullWidth
             error={formError}
-            variant="standard"
+            variant="outlined"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
             onKeyPress
           />
+          {/* <FormControl>
+            <InputLabel id="demo-simple-select-label">Code</InputLabel>
+            <Select
+              labelId="form-country-code"
+              id="demo-simple-select-standard"
+              value={formCountryCode}
+              onChange={(e) => setFormCountryCode(e.target.value)}
+              label="Age"
+            >
+              <MenuItem selected value="None">
+                None
+              </MenuItem>
+              {require("country-data")
+                .countries.all.filter(
+                  (e) =>
+                    e.status !== "deleted" &&
+                    e.countryCallingCodes[0] &&
+                    e.emoji
+                )
+                .map((element) => {
+                  return (
+                    <MenuItem value={element.countryCallingCodes[0]}>
+                      <CountryOptionRow>
+                        {element.emoji} {element.countryCallingCodes[0]}
+                      </CountryOptionRow>
+                    </MenuItem>
+                  );
+                })}
+            </Select>
+          </FormControl> */}
+          <TextField
+            autoComplete
+            margin="dense"
+            id="customer-phone"
+            label="Phone Number"
+            type="tel"
+            fullWidth
+            variant="outlined"
+            value={customerPhone}
+            onChange={(e) => setCustomerPhone(e.target.value)}
+            onKeyPress
+          />
+          <Button
+            variant="text"
+            disabled={!customerName && !customerPhone}
+            onClick={() => {
+              setCustomerName("");
+              setCustomerPhone("");
+            }}
+          >
+            Clear
+          </Button>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleSubmit}>CONTINUE</Button>

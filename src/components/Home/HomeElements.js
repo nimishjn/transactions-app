@@ -143,6 +143,9 @@ export const CTableRow = styled.div`
     color: white;
     background-color: blue;
     border-radius: 50%;
+    font-size: 1.25rem;
+    user-select: none;
+    font-weight: 500;
   }
 
   .customer-name {
@@ -182,4 +185,9 @@ export const AddCustomerButton = styled.button`
     font-size: 0.9rem;
     font-weight: 600;
   }
+`;
+
+export const CountryOptionRow = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
