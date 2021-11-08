@@ -16,18 +16,20 @@ const TransactionsTable = () => {
         <p>YOU GAVE</p>
         <p>YOU GOT</p>
       </TTableTop>
-      {[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1].map((element) =>
       <TTable>
-        <TCard>
-          <TCardEntry>
-            <p className="t-date-time">26 Jul 21 - 01:09 PM</p>
-            <p className="t-balance">Bal. ₹ 1,90,234</p>
-          </TCardEntry>
-          <TCardGet>₹ 1,90,234</TCardGet>
-          <TCardGive>₹ 1,90,234</TCardGive>
-        </TCard>
+        {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(
+          (element) => (
+            <TCard>
+              <TCardEntry>
+                <p className="t-date-time">26 Jul 21 - 01:09 PM</p>
+                <p className="t-balance">Bal. ₹ 1,90,234</p>
+              </TCardEntry>
+              <TCardGet>₹ 1,90,234</TCardGet>
+              <TCardGive>₹ 1,90,234</TCardGive>
+            </TCard>
+          )
+        )}
       </TTable>
-      )}
     </>
   );
 };

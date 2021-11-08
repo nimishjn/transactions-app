@@ -5,7 +5,11 @@ import TimeAgo from "timeago-react";
 
 const CustomerRow = ({ e }) => {
   return (
-    <CTableRow>
+    <CTableRow
+      onClick={() =>
+        (window.location.href = `/transactions/${e.name.replace(" ", "_")}`)
+      }
+    >
       <div width="2.5rem">
         <span className="customer-profile">
           {/* Initials generator */}

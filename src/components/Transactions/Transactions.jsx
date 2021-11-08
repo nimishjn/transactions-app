@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import {
+  AddTransactionsCard,
   CustomerCard,
   CustomerTotalCard,
   TransactionsContainer,
 } from "./TransactionsElements";
 import { customerSampleData } from "../../assets/SampleData";
 import { Fab } from "@mui/material";
-import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { amountFormatter } from "../../util/amountFormatter";
 import TransactionsTable from "./TransactionsTable";
@@ -14,12 +14,6 @@ import TransactionsTable from "./TransactionsTable";
 function fetchCustomerData(customerName) {
   return customerSampleData.find((e) => e.name === customerName);
 }
-
-const phoneFabStyle = {
-  position: "fixed",
-  bottom: 10,
-  right: 10,
-};
 
 const backFabStyle = {
   position: "relative",
@@ -76,12 +70,15 @@ const Transactions = (props) => {
 
         <TransactionsTable />
 
-        <a href={`tel:${customerData.phoneNumber}`}>
-          <Fab sx={phoneFabStyle} color="primary" aria-label="add">
-            <FaPhoneAlt />
-          </Fab>
-        </a>
       </TransactionsContainer>
+      <AddTransactionsCard>
+        <button style={{
+          backgroundColor: "var(--get-color)",
+        }}>YOU GAVE ₹</button>
+        <button style={{
+          backgroundColor: "var(--give-color)",
+        }}>YOU GOT ₹</button>
+      </AddTransactionsCard>
     </>
   );
 };
