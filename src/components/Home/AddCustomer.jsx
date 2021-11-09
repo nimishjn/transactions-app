@@ -37,6 +37,7 @@ const AddCustomer = ({ customerData, setCustomerData }) => {
       lastTransactionDate: new Date(),
       amount: 0,
       phoneNumber: customerPhone,
+      transactions: [],
     });
 
     setCustomerData(tempCustomerData);

@@ -6,14 +6,21 @@ export const CustomerCard = styled.div`
   padding: 10px;
   height: 60px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--primary);
   color: white;
 
   .t-back-button {
-    position: absolute;
-    left: 10px;
+    color: white;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .customer-details {
+    display: flex;
+    align-items: center;
   }
 
   .customer-profile {
@@ -50,14 +57,10 @@ export const CustomerCard = styled.div`
   a {
     text-decoration: none;
   }
-
-  @media screen and (max-width: 400px) {
-    justify-content: flex-end;
-  }
 `;
 
 export const TransactionsContainer = styled.div`
-  height: calc(100vh - 120px);
+  height: calc(100vh - 60px);
   padding: 0 10px 10px 10px;
   width: 100%;
   display: flex;
@@ -67,6 +70,12 @@ export const TransactionsContainer = styled.div`
   background-color: rgb(223, 223, 223);
   overflow-y: scroll;
   overflow-x: hidden;
+  
+  /* GotGot buttons tooltip CSS */
+  .MuiSpeedDialAction-staticTooltipLabel {
+    width: max-content;
+    font-size: 0.9rem;
+  }
 `;
 
 export const CustomerTotalCard = styled.div`
@@ -117,7 +126,7 @@ export const TTable = styled.div`
 `;
 
 export const TCard = styled.div`
-  height: 80px;
+  min-height: 80px;
   width: 100%;
   background-color: white;
   border-radius: 5px;
@@ -165,7 +174,7 @@ export const TCardGet = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 5px;
+  padding: 10px;
   font-size: 1.1rem;
   font-weight: 500;
   white-space: nowrap;
@@ -181,7 +190,7 @@ export const TCardGive = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 5px;
+  padding: 10px;
   font-size: 1.1rem;
   font-weight: 500;
   white-space: nowrap;
@@ -193,27 +202,27 @@ export const TCardGive = styled.div`
   }
 `;
 
-export const AddTransactionsCard = styled.div`
-  height: 60px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  position: relative;
-  justify-content: center;
-  padding: 20px;
+// export const AddTransactionsCard = styled.div`
+//   height: 60px;
+//   display: flex;
+//   gap: 20px;
+//   align-items: center;
+//   position: relative;
+//   justify-content: center;
+//   padding: 20px;
 
-  button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 5px 15px -13px #000000;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-  }
+//   button {
+//     width: 100%;
+//     padding: 10px;
+//     border-radius: 5px;
+//     border: none;
+//     box-shadow: 0px 5px 15px -13px #000000;
+//     color: white;
+//     font-weight: 600;
+//     cursor: pointer;
+//   }
 
-  button:hover {
-    box-shadow: -1px 10px 12px -11px #000000;
-  }
-`;
+//   button:hover {
+//     box-shadow: -1px 10px 12px -11px #000000;
+//   }
+// `;

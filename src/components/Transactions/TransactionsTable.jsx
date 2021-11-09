@@ -1,4 +1,6 @@
 import React from "react";
+import { amountFormatter } from "../../util/amountFormatter";
+import { dateTimeFormatter } from "../../util/dateTimeFormatter";
 import {
   TCard,
   TCardEntry,
@@ -8,7 +10,7 @@ import {
   TTableTop,
 } from "./TransactionsElements";
 
-const TransactionsTable = () => {
+const TransactionsTable = ({ transactions }) => {
   return (
     <>
       <TTableTop>
@@ -17,18 +19,18 @@ const TransactionsTable = () => {
         <p>YOU GOT</p>
       </TTableTop>
       <TTable>
-        {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map(
-          (element) => (
-            <TCard>
-              <TCardEntry>
-                <p className="t-date-time">26 Jul 21 - 01:09 PM</p>
-                <p className="t-balance">Bal. ₹ 1,90,234</p>
-              </TCardEntry>
-              <TCardGet>₹ 1,90,234</TCardGet>
-              <TCardGive>₹ 1,90,234</TCardGive>
-            </TCard>
-          )
-        )}
+        {transactions.map((transaction, index) => (
+          <TCard key={`transaction${index}`}>
+            <TCardEntry>
+              <p className="t-date-time">
+                {dateTimeFormatter(transaction.date)}
+              </p>
+              <p className="t-balance">Bal. ₹ 1,90,234</p>
+            </TCardEntry>
+            <TCardGet>{transaction.amount > 0 && "₹ " + amountFormatter(transaction.amount)}</TCardGet>
+            <TCardGive>{transaction.amount < 0 && "₹ " + amountFormatter(Math.abs(transaction.amount))}</TCardGive>
+          </TCard>
+        ))}
       </TTable>
     </>
   );

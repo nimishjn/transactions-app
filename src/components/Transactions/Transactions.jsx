@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import {
-  AddTransactionsCard,
   CustomerCard,
   CustomerTotalCard,
   TransactionsContainer,
 } from "./TransactionsElements";
 import { customerSampleData } from "../../assets/SampleData";
-import { Fab } from "@mui/material";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { amountFormatter } from "../../util/amountFormatter";
 import TransactionsTable from "./TransactionsTable";
+import GiveGotButtons from "./GiveGotButtons";
 
 function fetchCustomerData(customerName) {
+  // supposed to fetch from backend
   return customerSampleData.find((e) => e.name === customerName);
 }
 
-const backFabStyle = {
-  position: "relative",
-  fontSize: "1.2rem",
-  width: 40,
-  height: 40,
-};
 
 const Transactions = (props) => {
   const customerName = props.match.params.customerName.replace("_", " ");
@@ -29,15 +23,17 @@ const Transactions = (props) => {
     fetchCustomerData(customerName)
   );
 
+  if(customerData === undefined) {
+    window.location.href="/home";
+  }
+
   return (
     <>
       <CustomerCard>
         <a href="/home" className="t-back-button">
-          <Fab sx={backFabStyle} color="secondary" aria-label="add">
-            <IoMdArrowRoundBack />
-          </Fab>
+          <IoMdArrowRoundBack />
         </a>
-        <div width="3rem">
+        <div height="3rem" className="customer-details">
           <span className="customer-profile">
             {/* Initials generator */}
             {(
@@ -47,10 +43,10 @@ const Transactions = (props) => {
                 : "")
             ).toUpperCase()}
           </span>
-        </div>
-        <div className="customer-name">
-          <h2>{customerData.name}</h2>
-          {customerData.phoneNumber && <p>{customerData.phoneNumber}</p>}
+          <div className="customer-name">
+            <h2>{customerData.name}</h2>
+            {customerData.phoneNumber && <p>{customerData.phoneNumber}</p>}
+          </div>
         </div>
       </CustomerCard>
       <TransactionsContainer>
@@ -68,17 +64,26 @@ const Transactions = (props) => {
           </h2>
         </CustomerTotalCard>
 
-        <TransactionsTable />
+        <TransactionsTable transactions={customerData.transactions} />
 
+        <GiveGotButtons />
       </TransactionsContainer>
-      <AddTransactionsCard>
-        <button style={{
-          backgroundColor: "var(--get-color)",
-        }}>YOU GAVE ₹</button>
-        <button style={{
-          backgroundColor: "var(--give-color)",
-        }}>YOU GOT ₹</button>
-      </AddTransactionsCard>
+      {/* <AddTransactionsCard>
+        <button
+          style={{
+            backgroundColor: "var(--get-color)",
+          }}
+        >
+          YOU GAVE ₹
+        </button>
+        <button
+          style={{
+            backgroundColor: "var(--give-color)",
+          }}
+        >
+          YOU GOT ₹
+        </button>
+      </AddTransactionsCard> */}
     </>
   );
 };
