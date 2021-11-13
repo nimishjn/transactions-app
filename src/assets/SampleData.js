@@ -53,7 +53,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Apollo Victor",
@@ -77,7 +77,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Ashby Bryon",
@@ -101,31 +101,14 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Heath Lucian",
     lastTransactionDate: "2020-03-24T18:35:26.475Z",
     amount: 756011,
     phoneNumber: "+91 1234567890",
-    transactions: [
-      {
-        date: "2021-04-03T23:47:49.695Z",
-        amount: 1000,
-      },
-      {
-        date: "2020-04-03T23:47:49.695Z",
-        amount: 1000,
-      },
-      {
-        date: "2020-03-03T23:47:49.695Z",
-        amount: -10000,
-      },
-      {
-        date: "2019-04-03T23:47:49.695Z",
-        amount: 10000,
-      },
-    ]
+    transactions: [],
   },
   {
     name: "Linden Bear",
@@ -149,7 +132,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Elon Mervin",
@@ -173,7 +156,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Christian Eustace",
@@ -197,7 +180,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Alaric Cornelius",
@@ -221,7 +204,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Cedric Brendon",
@@ -245,7 +228,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Dewey Jim",
@@ -269,7 +252,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Nikolai Marco",
@@ -293,7 +276,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Olly Daxter",
@@ -317,7 +300,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Jordy Zachery",
@@ -341,7 +324,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Davin Thad",
@@ -365,7 +348,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Rex Josiah",
@@ -389,7 +372,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Ruairi Julio",
@@ -413,7 +396,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Rick Sylvester",
@@ -437,7 +420,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Abram Brooks",
@@ -461,7 +444,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Terrell Herman",
@@ -485,7 +468,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Travis Brentley",
@@ -509,7 +492,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Pascal Warren",
@@ -533,7 +516,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Titus Devin",
@@ -557,7 +540,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Maurice Edgar",
@@ -581,7 +564,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Rafael Art",
@@ -605,7 +588,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Kurt Christian",
@@ -629,7 +612,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Gustavo Alejandro",
@@ -653,7 +636,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Henri Daniel",
@@ -677,7 +660,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Denzel Abe",
@@ -701,7 +684,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Emil Joachim",
@@ -725,7 +708,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Nile Brayan",
@@ -749,7 +732,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Deandre Fernando",
@@ -773,7 +756,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Lukas Cayden",
@@ -797,7 +780,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Jax Avery",
@@ -821,7 +804,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Jesse Alesandro",
@@ -845,7 +828,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Bernardo Nasir",
@@ -869,7 +852,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Everett Landen",
@@ -893,7 +876,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Terry Darcy",
@@ -917,7 +900,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Damion Tyler",
@@ -941,7 +924,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Greg Ty",
@@ -965,7 +948,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
   {
     name: "Steven Roy",
@@ -989,7 +972,7 @@ export const customerSampleData = [
         date: "2019-04-03T23:47:49.695Z",
         amount: 10000,
       },
-    ]
+    ],
   },
 ];
 

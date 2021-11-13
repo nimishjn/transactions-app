@@ -59,6 +59,33 @@ export const CustomerCard = styled.div`
   }
 `;
 
+export const NoTransactionsContainer = styled.div`
+  height: calc(100vh - 60px);
+  padding: 0 10px 10px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .arrow-pointer {
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+  }
+
+  /* GotGot buttons tooltip CSS */
+  .MuiSpeedDialAction-staticTooltipLabel {
+    width: max-content;
+    font-size: 0.9rem;
+  }
+`;
+
 export const TransactionsContainer = styled.div`
   height: calc(100vh - 60px);
   padding: 0 10px 10px 10px;
