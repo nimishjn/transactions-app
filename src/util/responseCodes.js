@@ -1,6 +1,6 @@
 export const responseCodes = {
   E0: "Undefined error occured. Please try again later.",
-  E1: "Error with database. Please try again later.",
+  E1: "Error with database. This may be an issue with the type of data entered by you.",
   E2: "Password hashing issue. Please try again later.",
   E3: "Unique Id generation issue. Please try again later.",
   E4: "Session Expired. Try logging in again.",
