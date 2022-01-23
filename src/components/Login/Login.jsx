@@ -1,7 +1,6 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { requestLogin } from "../../api/requests";
 import {
   ForgotPassword,
@@ -12,8 +11,12 @@ import {
   LoginWrap,
   SignupWrap,
 } from "./LoginElements";
+import { responseCodes } from "../../util/responseCodes";
+import { ToastContext } from "../../contexts/ToastContext";
 
 function Login() {
+  const history = useHistory();
+  const { handleSnackOpen } = useContext(ToastContext);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -27,7 +30,16 @@ function Login() {
 
     if (response.success) {
       localStorage.setItem("token", response.data.token);
-      window.location.href = "/";
+      handleSnackOpen({
+        variant: "success",
+        message: responseCodes[response.data.code],
+      });
+      history.push("/");
+    } else {
+      handleSnackOpen({
+        variant: "error",
+        message: responseCodes[response.data.code],
+      });
     }
   };
 
@@ -62,7 +74,7 @@ function Login() {
         Login with Google
         <HLine />
         <SignupWrap>
-          <p>Dont have an account?</p>
+          <p>Don't have an account?</p>
           <Link to="/signup">
             <Button variant="outlined">Signup Now!</Button>
           </Link>
