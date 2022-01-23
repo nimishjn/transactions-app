@@ -1,0 +1,28 @@
+export const responseCodes = {
+  E0: "Undefined error occured. Please try again later.",
+  E1: "Error with database. Please try again later.",
+  E2: "Password hashing issue. Please try again later.",
+  E3: "Unique Id generation issue. Please try again later.",
+  E4: "Session Expired. Try logging in again.",
+  E5: "Login required.",
+
+  L0: "Email already exists. Try again with a different email address.",
+  L1: "Invalid Password pattern. Follow the rules for password creation.",
+  L3: "Email does not exist. Please create an account before logging in.",
+  L4: "Please verify your email before logging in. Verification email has been sent.",
+  L5: "Please verify your email before logging in. Verification email could not be sent.",
+  L6: "Incorrect Password.",
+  L7: "Customer already exist. Please use a different customer name.",
+  L8: "Customer not found.",
+  L9: "Transaction not found.",
+
+  S0: "Signup successful. Verification email has been sent.",
+  S1: "Signup successful. Verification email could not be sent.",
+  S2: "Login successful.",
+  S3: "New customer successfully added.",
+  S4: "Customer successfully deleted.",
+  S5: "Customer successfully updated.",
+  S6: "New transaction successfully added.",
+  S7: "Transaction successfully deleted.",
+  S8: "Transaction successfully updated.",
+};
